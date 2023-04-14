@@ -1,69 +1,84 @@
 <!DOCTYPE html>
-
-<html lang="es">
-
-<head>
-
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva de Turnos en la Barbería</title>
-
-</head>
-
-<body>
-
-	<h1>Reserva de Turnos en la Barbería</h1>
-
-	<form>
-
-		<label for="nombre">Nombre:</label>
-
-		<input type="text" id="nombre" name="nombre"><br><br>
-
-		<label for="email">Correo electrónico:</label>
-
-		<input type="email" id="email" name="email"><br><br>
-
-		<label for="telefono">Teléfono:</label>
-
-		<input type="tel" id="telefono" name="telefono"><br><br>
-
-		<label for="fecha">Fecha:</label>
-
-		<input type="date" id="fecha" name="fecha"><br><br>
-
-		<label for="hora">Hora:</label>
-
-		<input type="time" id="hora" name="hora"><br><br>
-
-		<input type="submit" value="Reservar turno" onclick="enviarReserva()">
-
-	</form>
+    <title>Reserva de turno - Barbería</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reserva de turno - Barbería</h1>
+      <form id="reservation-form">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="time">Hora:</label>
+          <input type="time" id="time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label for="service">Servicio:</label>
+          <select id="service" name="service" required>
+            <option value="">Seleccione un servicio</option>
+            <option value="corte">Corte de cabello</option>
+            <option value="afeitado">Afeitado</option>
+            <option value="barba">Recorte de barba</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="price">Precio:</label>
+          <input type="text" id="price" name="price" value="50.00" readonly>
+        </div>
+        <div class="form-group">
+          <label for="payment">Método de pago:</label>
+          <select id="payment" name="payment" required>
+            <option value="">Seleccione un método de pago</option>
+            <option value="mercadopago">MercadoPago</option>
+          </select>
+        </div>
+        <button type="submit">Confirmar reserva</button>
+      </form>
+    </div>
+  </body>
+</html>
 
 	<script src="https://www.mercadopago.com/v2/security.js" view=""></script>
 
 	
-//	<script>
+	<script>
 
-//		function enviarReserva() {
+		function enviarReserva() {
 
 			// Obtener los datos de reserva ingresados por el usuario
 
-//			var nombre = document.getElementById("nombre").value;
+			var nombre = document.getElementById("nombre").value;
 
-//			var email = document.getElementById("email").value;
+			var email = document.getElementById("email").value;
 
-//			var telefono = document.getElementById("telefono").value;
+			var telefono = document.getElementById("telefono").value;
 
-//			var fecha = document.getElementById("fecha").value;
+			var fecha = document.getElementById("fecha").value;
 
-//			var hora = document.getElementById("hora").value;
+			var hora = document.getElementById("hora").value;
 
 			// Crear objeto de pago
 
-//			var checkout = new MercadoPago.Checkout({
+			var checkout = new MercadoPago.Checkout({
 
-//				publicKey: 'PUBLIC_KEY
+				publicKey: 'PUBLIC_KEY
 
-  // </script>
+	</script>
